@@ -24,24 +24,36 @@ namespace Akinsof_cloe
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {   
-            int hour = Convert.ToInt32(txt_hour.Text);
-            int min = Convert.ToInt32(txt_min.Text) + (hour * 60) ;
-            int sec = Convert.ToInt32(txt_sec.Text) + (min * 60) ;
-            progressBar1.Maximum= sec;
-            progressBar1.Value = sec;
-            timer1.Start();
+        {
+            if(!string.IsNullOrEmpty(txt_hour.Text)&& !string.IsNullOrEmpty(txt_min.Text)&& !string.IsNullOrEmpty(txt_sec.Text))
+            {
+                int hour = Convert.ToInt32(txt_hour.Text);
+                int min = Convert.ToInt32(txt_min.Text) + (hour * 60);
+                int sec = Convert.ToInt32(txt_sec.Text) + (min * 60);
+                progressBar1.Maximum = sec;
+                progressBar1.Value = sec;
+                timer1.Start();
+                this.button1.Enabled = false;
+                button2.Enabled = true;
+                button3.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Please fill the lines.");
+            }
+           
+            
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
 
         }
-        SoundPlayer player;
+       
         private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar1.Value -= 1;
-            if (progressBar1.Value==0)
+            progressBar1.Value -= 1;//Countdown.
+            if (progressBar1.Value==0)//Timer end sound.
             {
                 timer1.Stop();
                 SoundPlayer ses = new SoundPlayer();
@@ -49,6 +61,21 @@ namespace Akinsof_cloe
                 ses.Play();
                 MessageBox.Show("Time is END","ALERT",MessageBoxButtons.OK);
             }
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+          timer1.Start();
         }
     }
 }
