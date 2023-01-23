@@ -34,8 +34,10 @@ namespace Akinsof_cloe
                 progressBar1.Value = sec;
                 timer1.Start();
                 this.button1.Enabled = false;
+                button1.Visible = false;
                 button2.Enabled = true;
-                button3.Enabled = true;
+                button3.Enabled = false;
+                btnreset.Visible = true;
             }
             else
             {
@@ -71,11 +73,26 @@ namespace Akinsof_cloe
         private void button2_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            button3.Enabled = true;
+            button2.Enabled = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
           timer1.Start();
+            button3.Enabled = false;
+            button2.Enabled = true;
+        }
+
+        private void btnreset_Click(object sender, EventArgs e)
+        {
+            button1.Visible = true;
+            button2.Enabled=false;
+            button3.Enabled = false;
+            progressBar1.Value= 0;
+            timer1.Stop();
+            btnreset.Visible = false;
+            button1.Enabled = true;
         }
     }
 }

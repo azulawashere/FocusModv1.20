@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnreset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,7 +99,7 @@
             this.txt_min.Mask = "00";
             this.txt_min.Name = "txt_min";
             this.txt_min.Size = new System.Drawing.Size(35, 20);
-            this.txt_min.TabIndex = 2;
+            this.txt_min.TabIndex = 1;
             this.txt_min.ValidatingType = typeof(int);
             // 
             // txt_hour
@@ -107,7 +108,7 @@
             this.txt_hour.Mask = "00";
             this.txt_hour.Name = "txt_hour";
             this.txt_hour.Size = new System.Drawing.Size(35, 20);
-            this.txt_hour.TabIndex = 2;
+            this.txt_hour.TabIndex = 0;
             this.txt_hour.ValidatingType = typeof(int);
             // 
             // label3
@@ -144,7 +145,7 @@
             this.button2.Location = new System.Drawing.Point(123, 141);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 26);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 1;
             this.button2.Text = "Stop";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -156,16 +157,29 @@
             this.button3.Location = new System.Drawing.Point(37, 141);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(80, 26);
-            this.button3.TabIndex = 4;
+            this.button3.TabIndex = 0;
             this.button3.Text = "Continue";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnreset
+            // 
+            this.btnreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnreset.Location = new System.Drawing.Point(216, 141);
+            this.btnreset.Name = "btnreset";
+            this.btnreset.Size = new System.Drawing.Size(97, 28);
+            this.btnreset.TabIndex = 3;
+            this.btnreset.Text = "Reset";
+            this.btnreset.UseVisualStyleBackColor = true;
+            this.btnreset.Visible = false;
+            this.btnreset.Click += new System.EventHandler(this.btnreset_Click);
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 175);
+            this.Controls.Add(this.btnreset);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
@@ -196,5 +210,6 @@
         private System.Windows.Forms.MaskedTextBox txt_hour;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnreset;
     }
 }
