@@ -33,15 +33,15 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_sec = new System.Windows.Forms.MaskedTextBox();
-            this.txt_min = new System.Windows.Forms.MaskedTextBox();
-            this.txt_hour = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnreset = new System.Windows.Forms.Button();
+            this.txt_hour = new System.Windows.Forms.TextBox();
+            this.txt_min = new System.Windows.Forms.TextBox();
+            this.txt_sec = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,7 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.ForeColor = System.Drawing.Color.Red;
             this.progressBar1.Location = new System.Drawing.Point(11, 114);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(302, 23);
@@ -83,33 +84,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Timer Set";
-            // 
-            // txt_sec
-            // 
-            this.txt_sec.Location = new System.Drawing.Point(229, 39);
-            this.txt_sec.Mask = "00";
-            this.txt_sec.Name = "txt_sec";
-            this.txt_sec.Size = new System.Drawing.Size(38, 20);
-            this.txt_sec.TabIndex = 2;
-            this.txt_sec.ValidatingType = typeof(int);
-            // 
-            // txt_min
-            // 
-            this.txt_min.Location = new System.Drawing.Point(138, 39);
-            this.txt_min.Mask = "00";
-            this.txt_min.Name = "txt_min";
-            this.txt_min.Size = new System.Drawing.Size(35, 20);
-            this.txt_min.TabIndex = 1;
-            this.txt_min.ValidatingType = typeof(int);
-            // 
-            // txt_hour
-            // 
-            this.txt_hour.Location = new System.Drawing.Point(42, 39);
-            this.txt_hour.Mask = "00";
-            this.txt_hour.Name = "txt_hour";
-            this.txt_hour.Size = new System.Drawing.Size(35, 20);
-            this.txt_hour.TabIndex = 0;
-            this.txt_hour.ValidatingType = typeof(int);
             // 
             // label3
             // 
@@ -174,6 +148,30 @@
             this.btnreset.Visible = false;
             this.btnreset.Click += new System.EventHandler(this.btnreset_Click);
             // 
+            // txt_hour
+            // 
+            this.txt_hour.Location = new System.Drawing.Point(42, 39);
+            this.txt_hour.Name = "txt_hour";
+            this.txt_hour.Size = new System.Drawing.Size(47, 20);
+            this.txt_hour.TabIndex = 2;
+            this.txt_hour.Text = "0";
+            // 
+            // txt_min
+            // 
+            this.txt_min.Location = new System.Drawing.Point(128, 42);
+            this.txt_min.Name = "txt_min";
+            this.txt_min.Size = new System.Drawing.Size(47, 20);
+            this.txt_min.TabIndex = 2;
+            this.txt_min.Text = "0";
+            // 
+            // txt_sec
+            // 
+            this.txt_sec.Location = new System.Drawing.Point(229, 42);
+            this.txt_sec.Name = "txt_sec";
+            this.txt_sec.Size = new System.Drawing.Size(47, 20);
+            this.txt_sec.TabIndex = 2;
+            this.txt_sec.Text = "0";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,11 +203,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox txt_sec;
-        private System.Windows.Forms.MaskedTextBox txt_min;
-        private System.Windows.Forms.MaskedTextBox txt_hour;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnreset;
+        private System.Windows.Forms.TextBox txt_sec;
+        private System.Windows.Forms.TextBox txt_min;
+        private System.Windows.Forms.TextBox txt_hour;
     }
 }
