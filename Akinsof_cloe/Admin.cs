@@ -38,6 +38,14 @@ namespace Akinsof_cloe
                 button2.Enabled = true;
                 button3.Enabled = false;
                 btnreset.Visible = true;
+                if (progressBar1.Value == 0)//Timer end sound.
+                {
+                    timer1.Stop();
+                    SoundPlayer ses = new SoundPlayer();
+                    ses.SoundLocation = "sound.wav";
+                    ses.Play();
+                    MessageBox.Show("Time is END", "ALERT", MessageBoxButtons.OK);
+                }
             }
             else
             {
@@ -53,7 +61,7 @@ namespace Akinsof_cloe
         }
        
         private void timer1_Tick(object sender, EventArgs e)
-        {
+        {   
             progressBar1.Value -= 1;//Countdown.
             if (progressBar1.Value==0)//Timer end sound.
             {
